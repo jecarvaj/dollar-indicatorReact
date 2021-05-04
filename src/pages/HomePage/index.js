@@ -3,6 +3,10 @@ import DateSelector from 'components/molecules/DateSelector'
 import HomeTemplate from 'components/templates/HomeTemplate'
 import IndicatorsContainer from 'components/organisms/IndicatorsContainer'
 import { getDollarByPeriod } from 'services/api.service'
+import Footer from 'components/atoms/Footer'
+
+
+
 
 const TODAY = new Date()
 const LASTWEEK = new Date()
@@ -23,6 +27,7 @@ const calculateMax = values => {
 }
 
 const HomePage = () => {
+  const [isLoading, setIsLoading] = useState(false)
   const [rangeSelected, setRangeSelected] = useState([LASTWEEK, TODAY])
   const [labelsChart, setLabelsChart] = useState([])
   const [dataChart, setDataChart] = useState([])
@@ -32,8 +37,9 @@ const HomePage = () => {
 
   const fetchDataApi = async range => {
     //TODO: FALta el loader
-    console.log("Is Loading")
+    // setIsLoading(true)
     const response = await getDollarByPeriod(range[0], range[1])
+    // setIsLoading(false)
     setRangeSelected(range)
 
     if (response?.status === 200) {
@@ -42,13 +48,16 @@ const HomePage = () => {
       //TODO: falta el manejo de este error
       console.log("error en la peticion")
     }
-
+    // setIsLoading(false)
     console.log("FINALIZA LOADING")
   }
 
   const setIndicators = dolaresObj => {
     const arrayValues = dolaresObj.map(x => parseFloat(x.Valor.replace(",", ".")))
-    const arrayLabels = dolaresObj.map(x => x.Fecha)
+    const arrayLabels = dolaresObj.map(x => {
+      const date = new Date(x.Fecha)
+      return date.toLocaleDateString()
+    })
 
     setLabelsChart(arrayLabels)
     setDataChart(arrayValues)
@@ -70,12 +79,13 @@ const HomePage = () => {
       }
       indicators={
         <IndicatorsContainer
-          indicators={[minValue, avgValue, maxValue]}
-          labelsChart={labelsChart}
-          dataChart={dataChart}
+        indicators={[minValue, avgValue, maxValue]}
+        labelsChart={labelsChart}
+        dataChart={dataChart}
         />
       }
-    />
+      footer={<Footer/>}
+      />
   )
 }
 

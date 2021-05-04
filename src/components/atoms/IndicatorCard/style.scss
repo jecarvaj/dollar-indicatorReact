@@ -1,5 +1,33 @@
 .card-indicator{
   // background-color: red !important;
   color: green !important;
-  padding: 20px
+  padding: 10px;
+  min-height: 85px;
+   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-bottom: 10px solid rgb(175, 164, 13);
+  position: relative;
+  .card-title{
+    font-size: 14pt;
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    &::after{
+    top: 5px;
+    width: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: '';
+    /* align-items: center; */
+    display: block;
+    /* box-shadow: 1px 0px 0px 0px black; */
+    position: relative;
+    border-top: 3px solid #3CBA68;
+    }
+  }
+  .card-value{
+    margin-top: 24px !important;
+  }
 }

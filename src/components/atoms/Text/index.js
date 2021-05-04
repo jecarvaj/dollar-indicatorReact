@@ -1,19 +1,19 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
-
+import './style.scss'
 const Text = (props) => {
-  const { variant, children } = props
+  const { variant, children, center=false, className} = props
 
   const getVariant = (variant) => {
     switch (variant) {
       case 'header':
-        return 'h4'
+        return 'h2'
       case 'title':
         return 'h5'
       case 'subtitle':
         return 'h6'
       case 'indicator-value':
-        return 'h3'
+        return 'h4'
       default:
         break;
     }
@@ -21,7 +21,7 @@ const Text = (props) => {
 
 
   return (
-    <Typography variant={getVariant(variant)}>
+    <Typography variant={getVariant(variant)} align={center ? 'center' : 'inherit'} className={className}>
       {children}
     </Typography>
   )

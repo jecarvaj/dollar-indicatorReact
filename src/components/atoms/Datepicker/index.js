@@ -1,5 +1,7 @@
 import React from 'react'
-import DateRangePicker from '@wojtekmaj/react-daterange-picker';
+import DateRangePicker from '@wojtekmaj/react-daterange-picker/dist/entry.nostyle'
+import './style.scss'
+import './styleCalendar.scss'
 
 const Datepicker = (props) => {
   const { onDateSelected, range } = props

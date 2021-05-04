@@ -1,15 +1,15 @@
-import { Box } from '@material-ui/core'
-import React, {useEffect, useRef} from 'react'
-import { Line } from 'react-chartjs-2'
+import React, {useEffect} from 'react'
+import { Box, Paper } from '@material-ui/core'
+import {Line} from 'react-chartjs-2'
 
-const Chart = (props) => {
-  const { labels, dataset } = props
-  const ref = useRef()
+const ChartComponent = (props) => {
+  const { labels=[], dataset=[], dataLabel="" } = props
+
   const data = {
     labels,
     datasets: [
       {
-        label: 'Este es el label',
+        label: dataLabel,
         data: dataset,
         fill: false,
         backgroundColor: "rgb(255, 99, 132)",
@@ -18,28 +18,15 @@ const Chart = (props) => {
     ]
   }
 
-  const options = {
-    responsive: true, 
-    maintainAspectRatio: true,
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            beginAtZero: false
-          }
-        }
-      ]
-    }
-  }
   useEffect(() => {
     console.log("en use efect chart")
   }, [])
   
   return (
-    <Box>
-      <Line ref={ref} data={data} options={options} />
+    <Box component={Paper} px={4} py={2}>
+      <Line data={data}  />
     </Box>
   )
 }
 
-export default Chart
+export default ChartComponent

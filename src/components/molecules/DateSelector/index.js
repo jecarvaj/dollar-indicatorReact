@@ -1,17 +1,22 @@
 import React from 'react'
-import { Paper } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import Datepicker from 'components/atoms/Datepicker'
 import Text from 'components/atoms/Text'
+import './style.scss'
 
 const DateSelector = (props) => {
   const { onDateSelected, range } = props
   return (
-    <Paper>
-      <Text variant="title">
-        Selecciona el rango de fechas
-      </Text>
-      <Datepicker onDateSelected={onDateSelected} range={range}/>
-    </Paper>
+    <Grid container justify='center'>
+      <Grid item xs={12}>
+        <Text variant="title" center className='selector-title'>
+          Selecciona el rango de fechas
+        </Text>
+      </Grid>
+      <Grid item xs={6}>
+        <Datepicker onDateSelected={onDateSelected} range={range} />
+      </Grid>
+    </Grid>
   )
 }
 

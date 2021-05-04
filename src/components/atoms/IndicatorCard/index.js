@@ -1,16 +1,18 @@
-import { Paper } from '@material-ui/core'
+import { Card, CardContent, CardHeader } from '@material-ui/core'
 import React from 'react'
 import Text from 'components/atoms/Text'
-import 'components/atoms/IndicatorCard/style.scss'
+import './style.scss'
 
 const IndicatorCard = (props) => {
   const { title, value } = props
 
   return (
-    <Paper elevation={5} className="card-indicator">
-        <Text variant="subtitle">{title}</Text>
-        <Text variant="indicator-value">{value}</Text>
-    </Paper>
+    <Card elevation={24} className="card-indicator" >
+      <CardContent>
+        <span className='card-title' >{title}</span>
+        <Text variant="indicator-value" center className='card-value'>{value}</Text>
+      </CardContent>
+    </Card>
   )
 }
 

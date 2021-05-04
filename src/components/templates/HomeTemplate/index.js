@@ -1,15 +1,22 @@
-import { Container, Grid } from '@material-ui/core'
+import { Container, Grid, Box } from '@material-ui/core'
 import React from 'react'
+import './style.scss'
+
 
 const HomeTemplate = (props) => {
-  const { header, selector, indicators } = props
+  const { header, selector, indicators, footer } = props
   return (
-    <Container >
-      <Grid container justify="center" spacing={10}>
-        <Grid item xs={12}>
+    <React.Fragment>
+
+    <Box component={Container}>
+      <Grid container justify="center" spacing={0} direction="column"
+        alignItems="center"
+        justify="center"
+        style={{ minHeight: '100vh' }}>
+       {/*  <Grid item xs={12}>
           {header}
-        </Grid>
-        <Grid item xs={10} md={8}>
+        </Grid> */}
+        <Grid item xs={10} md={8} >
           {selector}
         </Grid>
         <Grid item xs={12} md={12} >
@@ -17,7 +24,9 @@ const HomeTemplate = (props) => {
         </Grid>
         
       </Grid>
-    </Container>
+      {footer}
+    </Box>
+        </React.Fragment>
   )
 }
 
