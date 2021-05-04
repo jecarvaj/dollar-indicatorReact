@@ -1,11 +1,11 @@
 import React from 'react'
-import FooterImg from './footer.png'
 import './style.scss'
+
 
 const Footer = () => {
   return (
     <div className="footer">
-      <img src={FooterImg} alt="footerimg" style={{ width: 100 + '%' }} />
+      <img id='footer-img' src={'/imgs/footer.png'} alt="footerimg" style={{ width: 100 + '%' }} />
     </div>
   )
 }

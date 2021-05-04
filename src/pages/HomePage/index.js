@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import DateSelector from 'components/molecules/DateSelector'
 import HomeTemplate from 'components/templates/HomeTemplate'
+import ToggleTheme from 'components/atoms/ToggleTheme'
+import DateSelector from 'components/molecules/DateSelector'
 import IndicatorsContainer from 'components/organisms/IndicatorsContainer'
-import { getDollarByPeriod } from 'services/api.service'
 import Footer from 'components/atoms/Footer'
+
+import { getDollarByPeriod } from 'services/api.service'
 import { calculateAvg, calculateMax, calculateMin, showLoader } from 'utils'
 
 // Defino las fechas por defecto para mostrar al inicio
@@ -53,10 +55,12 @@ const HomePage = () => {
 
   useEffect(() => {
     fetchDataApi(rangeSelected)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
     <HomeTemplate
+      switchThemeButton = {<ToggleTheme/>}
       selector={
         <DateSelector onDateSelected={fetchDataApi} range={rangeSelected} />
       }

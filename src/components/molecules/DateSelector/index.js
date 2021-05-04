@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Grid, LinearProgress } from '@material-ui/core'
 import Datepicker from 'components/atoms/Datepicker'
 import Text from 'components/atoms/Text'
@@ -18,11 +19,21 @@ const DateSelector = (props) => {
         <Datepicker
           onDateSelected={onDateSelected}
           range={range} />
-        <LinearProgress color='primary' id="loaderLine" style={{ display: 'none' }} />
+        <LinearProgress color='secondary' id="loaderLine" style={{ display: 'none' }} />
       </Grid>
 
     </Grid>
   )
 }
+
+DateSelector.propTypes = {
+  onDateSelected: PropTypes.func.isRequired,
+  range: PropTypes.array
+}
+
+DateSelector.defaultProps = {
+  range: [new Date(), new Date()]
+}
+
 
 export default DateSelector

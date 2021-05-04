@@ -1,0 +1,24 @@
+.form-group-toggle{
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  .toggle-label{
+    flex-direction: row-reverse;
+  }
+  .toggle-icon{
+    color: white;
+    margin-top: 5px;
+    font-size: 200%;
+  }
+}
+
+@media(max-width: 900px){
+  .form-group-toggle{
+    position: absolute;
+    right: 5px;
+    top: 24px;
+    .toggle-label{
+      flex-direction: column-reverse;
+    }
+  }
+}

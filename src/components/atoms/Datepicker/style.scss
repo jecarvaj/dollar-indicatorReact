@@ -1,3 +1,20 @@
+.dark-mode{
+  .react-daterange-picker__wrapper {
+    background-color: #1e2a30;
+    border: thin solid #056162;
+      &:focus-within{
+      border-color: #056162;
+      box-shadow: 0 0 9px 0em #afa40d24;
+    // box-shadow: 0 0 0 0.2em rgb(1 177 100 / 25%);
+  }
+  input, span{
+    color: white;
+  }
+  }
+
+}
+
+
 .react-daterange-picker {
   display: inline-flex;
   position: relative;

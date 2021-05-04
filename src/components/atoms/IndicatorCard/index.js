@@ -1,5 +1,6 @@
 import React from 'react'
-import { Card, CardContent, CardHeader } from '@material-ui/core'
+import PropTypes from "prop-types";
+import { Card, CardContent } from '@material-ui/core'
 import Text from 'components/atoms/Text'
 import './style.scss'
 
@@ -16,4 +17,13 @@ const IndicatorCard = (props) => {
   )
 }
 
+IndicatorCard.propTypes = {
+  title: PropTypes.string,
+  value: PropTypes.string,
+}
+
+IndicatorCard.defaultProps = {
+  title: '',
+  value: '',
+}
 export default IndicatorCard

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Paper } from '@material-ui/core'
 import {Line} from 'react-chartjs-2'
+import PropTypes from "prop-types";
 import './style.scss'
 
 /*
@@ -9,7 +10,7 @@ import './style.scss'
  */
 
 const ChartComponent = (props) => {
-  const { labels=[], dataset=[], dataLabel="" } = props
+  const { labels, dataset, dataLabel } = props
 
   const data = {
     labels,
@@ -29,6 +30,16 @@ const ChartComponent = (props) => {
       <Line data={data}  />
     </Box>
   )
+}
+
+ChartComponent.propTypes = {
+  labels: PropTypes.array.isRequired,
+  dataset: PropTypes.array.isRequired,
+  dataLabel: PropTypes.string,
+}
+
+ChartComponent.defaultProps = {
+  dataLabel: ""
 }
 
 export default ChartComponent

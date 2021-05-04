@@ -3,10 +3,11 @@ import { Container, Grid } from '@material-ui/core'
 
 
 const HomeTemplate = (props) => {
-  const { selector, indicators, footer } = props
+  const { selector, indicators, footer, switchThemeButton } = props
 
   return (
     <Container>
+      {switchThemeButton}
       <Grid container
         spacing={0}
         direction="column"

@@ -35,3 +35,14 @@
     margin-top: 24px !important;
   }
 }
+
+.dark-mode{
+  .card-indicator{
+    background-color: #262d31 !important;
+    color: white !important;
+    border-bottom: 10px solid #056162;
+      .card-title::after{
+        border-top: 3px solid #356477;
+      }
+  }
+}

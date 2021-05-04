@@ -11,3 +11,7 @@ body {
 body > #root > div {
   height: 100vh !important;
 }
+
+body.dark-mode{
+  background: linear-gradient(0deg, #232324 0%, rgb(31 31 32) 100%) !important;
+}

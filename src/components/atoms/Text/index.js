@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from "prop-types";
 import Typography from '@material-ui/core/Typography'
 import './style.scss'
 
@@ -15,11 +16,12 @@ const Text = (props) => {
         return 'h6'
       case 'indicator-value':
         return 'h4'
+      case 'body':
+        return 'body'
       default:
-        break;
+        return 'body'
     }
   }
-
 
   return (
     <Typography variant={getVariant(variant)} align={center ? 'center' : 'inherit'} className={className}>
@@ -27,5 +29,16 @@ const Text = (props) => {
     </Typography>
   )
 }
+
+
+Text.propTypes = {
+  center: PropTypes.bool,
+  children: PropTypes.string.isRequired,
+  variant: PropTypes.oneOf(["header", "title", "subtitle", "indicator-value"]),
+};
+
+Text.defaultProps = {
+  variant: "body",
+};
 
 export default Text

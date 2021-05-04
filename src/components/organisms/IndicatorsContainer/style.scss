@@ -6,6 +6,11 @@
   }
 }
 
+.dark-mode{
+  .indicators-container{
+    background-color: #41414375 !important;
+  }
+}
  
 @media(max-width: 960px){
   .indicators-container{
