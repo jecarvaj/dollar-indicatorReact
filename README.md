@@ -22,4 +22,4 @@ https://dollar-indicator.herokuapp.com/
 
 ## Trabajo pendiente
 - Generar esquema de diseño aprovechando las ventajas de Sass
-- Modificar cambio de Theme para imagen del footer, ya que al cargar de nuevo demora a veces
+- ~~Modificar cambio de Theme para imagen del footer, ya que al cargar de nuevo demora a veces~~
