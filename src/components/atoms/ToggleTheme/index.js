@@ -10,10 +10,12 @@ const ToggleTheme = () => {
     setChecked(!checked);
     if(checked){
       document.body.classList.add('dark-mode')
-      document.getElementById('footer-img').src = '/imgs/footer_dark.png'
+      document.getElementById('footer-img').style.display = 'none'
+      document.getElementById('footer-img-dark').style.display = ''
     }else{
       document.body.classList.remove('dark-mode')
-      document.getElementById('footer-img').src = '/imgs/footer.png'
+      document.getElementById('footer-img').style.display = ''
+      document.getElementById('footer-img-dark').style.display = 'none'
     }
   }
 
