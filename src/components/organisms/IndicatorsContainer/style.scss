@@ -1,6 +1,15 @@
 .indicators-container{
-  
-    padding-top: 30px;
-    padding-bottom: 20px;
-  // background-color: red;
+  background-color: #11281975 !important;
+  .indicators-grid{
+      padding-top: 30px;
+      padding-bottom: 20px;
+  }
+}
+
+ 
+@media(max-width: 960px){
+  .indicators-container{
+    background-color: transparent !important;  
+    box-shadow: 0 0 0 0 !important;
+  }
 }

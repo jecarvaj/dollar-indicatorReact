@@ -1,8 +1,9 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
 import './style.scss'
+
 const Text = (props) => {
-  const { variant, children, center=false, className} = props
+  const { variant, children, center = false, className } = props
 
   const getVariant = (variant) => {
     switch (variant) {

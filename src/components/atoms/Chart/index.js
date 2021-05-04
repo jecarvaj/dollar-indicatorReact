@@ -1,6 +1,12 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import { Box, Paper } from '@material-ui/core'
 import {Line} from 'react-chartjs-2'
+import './style.scss'
+
+/*
+ * VERSION DE CHARTJS NO COMPATIBLE, NO FUNCIONAN LAS OPCIONES
+ * por eso no las agrego, me di cuenta al terminar
+ */
 
 const ChartComponent = (props) => {
   const { labels=[], dataset=[], dataLabel="" } = props
@@ -18,12 +24,8 @@ const ChartComponent = (props) => {
     ]
   }
 
-  useEffect(() => {
-    console.log("en use efect chart")
-  }, [])
-  
   return (
-    <Box component={Paper} px={4} py={2}>
+    <Box component={Paper} className='chart-container'>
       <Line data={data}  />
     </Box>
   )

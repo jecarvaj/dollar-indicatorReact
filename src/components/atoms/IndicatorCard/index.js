@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader } from '@material-ui/core'
 import React from 'react'
+import { Card, CardContent, CardHeader } from '@material-ui/core'
 import Text from 'components/atoms/Text'
 import './style.scss'
 

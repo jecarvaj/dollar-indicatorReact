@@ -5,7 +5,7 @@ import './style.scss'
 const Footer = () => {
   return (
     <div className="footer">
-      <img src={FooterImg} alt="Logo" style={{ width: 100 + '%' }} />
+      <img src={FooterImg} alt="footerimg" style={{ width: 100 + '%' }} />
     </div>
   )
 }

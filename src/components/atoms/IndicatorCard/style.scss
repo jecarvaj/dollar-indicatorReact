@@ -1,13 +1,18 @@
 .card-indicator{
-  // background-color: red !important;
+//  transition: all .5s ease-in-out;
   color: green !important;
   padding: 10px;
   min-height: 85px;
-   display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   border-bottom: 10px solid rgb(175, 164, 13);
   position: relative;
+  cursor: pointer;
+  &:hover{
+    transform: scale(1.02);
+    transition: all .1s ease-in-out;
+    }
   .card-title{
     font-size: 14pt;
     position: absolute;
@@ -20,12 +25,11 @@
     left: 50%;
     transform: translateX(-50%);
     content: '';
-    /* align-items: center; */
     display: block;
-    /* box-shadow: 1px 0px 0px 0px black; */
     position: relative;
     border-top: 3px solid #3CBA68;
     }
+   
   }
   .card-value{
     margin-top: 24px !important;
