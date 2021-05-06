@@ -19,6 +19,7 @@ $ yarn start
 
 ### Link de aplicación
 https://dollar-indicator.herokuapp.com/
+(Debido a heroku se demora en levantar el servicio al principio, por lo que saldrá un error y solo hay que actualizar nuevamente)
 
 ## Trabajo pendiente
 - Generar esquema de diseño aprovechando las ventajas de Sass
